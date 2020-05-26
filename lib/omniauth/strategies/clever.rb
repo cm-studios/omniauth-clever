@@ -14,8 +14,6 @@ module OmniAuth
 
       def authorize_params
         super.tap do |params|
-          params[:scope] = 'read_only'
-          params[:clever_landing] = options.client_options.clever_landing || 'admin'
           if options.client_options.dev
             params[:dev] = options.client_options.dev
           end
